@@ -1,0 +1,26 @@
+
+
+<div class="task-page">
+    <h2>Task List</h2>
+  
+    <a routerLink="/tasks/new">New Task</a>
+  
+    <ul>
+      @for (task of tasks$ | async; track task.id) {
+        <li>
+          <h3>{{ task.title }}</h3>
+          <p>{{ task.description }}</p>
+  
+          <small>
+            Status: {{ task.status }}<br>
+            Priority: {{ task.priority }}<br>
+            Due: {{ task.dueDate ? (task.dueDate | date: 'mediumDate') : 'N/A' }}
+          </small>
+  
+          <br />
+  
+          <a [routerLink]="['/tasks', task.id, 'edit']">Edit</a>
+        </li>
+      }
+    </ul>
+  </div>

@@ -1,0 +1,12 @@
+<!-- <p>main-layout-component works!</p> -->
+
+<header class="header">
+    <div class="brand">Task Manager</div>
+    <nav class="nav">
+        <a routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Tasks</a>
+        <a routerLink="/tasks/new" routerLinkActive="active">New Task</a>
+    </nav>
+</header>
+<main class="content">
+    <router-outlet></router-outlet>
+</main>
